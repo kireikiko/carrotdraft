@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>리트립 커뮤니티 프로토타입</title>
+<script>
+window.PROTOTYPE_ANALYTICS_CONFIG = {
+  clarityProjectId: "x0q300f678",
+  posthogKey: "",
+  posthogHost: "https://us.i.posthog.com"
+};
+</script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -472,6 +479,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  background: #f7f8f9;
 }
 .moim-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .moim-info {
@@ -603,6 +611,28 @@ body {
 }
 .cat-icon.active { background: #2a3038; }
 .cat-icon img { width: 32px; height: 32px; object-fit: contain; display: block; }
+.cat-all-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.cat-all-icon img {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+}
+.cat-all-icon img:first-child {
+  left: 8.6px;
+  top: 3.9px;
+  width: 14.9px;
+  height: 18.1px;
+}
+.cat-all-icon img:last-child {
+  left: 0.5px;
+  top: 2px;
+  width: 16.4px;
+  height: 20px;
+}
 .cat-label { font-size: 12px; font-weight: 600; color: #1a1c20; text-align: center; line-height: 16px; }
 
 /* ─── 요즘 인기 모임 review card (s7) ─── */
@@ -658,7 +688,7 @@ body {
   <div class="status-bar">
     <span class="status-time">9:41</span>
     <div class="status-icons-wrap">
-      <img src="https://www.figma.com/api/mcp/asset/e25990b1-97ad-406e-9274-afd906993aae" alt="">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='15' viewBox='0 0 72 15' fill='none'%3E%3Cpath d='M2 8h10M7 3v10M18 11h8M20 7h6M22 3h4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='38' y='3' width='24' height='9' rx='2' stroke='black' stroke-width='1.4'/%3E%3Crect x='40' y='5' width='17' height='5' rx='1' fill='black'/%3E%3Cpath d='M64 6v3' stroke='black' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     </div>
   </div>
 
@@ -667,9 +697,9 @@ body {
     <div class="comm-topbar">
       <span class="comm-title">커뮤니티</span>
       <div class="topbar-icons">
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/70ec0760-6acb-4f63-8a88-ad47e208873e" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/b0dd1e26-62a4-4b55-93da-12113e880abc" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/244baa11-4ab9-4a1c-9615-aa5f5d3e4c41" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='11' cy='11' r='7' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M16.5 16.5L21 21' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 3a7 7 0 00-7 7v4.5l-2 2.5h18l-2-2.5V10a7 7 0 00-7-7z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 19a2 2 0 104 0' stroke='%23868b94' stroke-width='2'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 6h16M4 12h16M4 18h16' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
       </div>
     </div>
     <div class="menu-tab">
@@ -678,7 +708,7 @@ body {
       <span>카페</span>
       <div class="apt-item">
         <span>아파트</span>
-        <img src="https://www.figma.com/api/mcp/asset/4805f7a9-49c3-449c-b590-fda2983e8e8c" alt="">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 18l6-6-6-6' stroke='%23868b94' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
       </div>
     </div>
   </div>
@@ -718,12 +748,12 @@ body {
         <span class="review-moim">하루런 in 다산</span>
         <div class="review-info-row">
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/5afb2c86-e7d0-4e54-8a20-1424ee3d8746" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span>다산동</span>
           </div>
           <span class="info-dot">•</span>
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/cef5055d-7302-441d-bc4a-cd0f057950d7" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
             <span>30명</span>
           </div>
           <span class="info-dot">•</span>
@@ -731,7 +761,7 @@ body {
         </div>
       </div>
       <div class="review-author">
-        <div class="avatar"><img src="https://www.figma.com/api/mcp/asset/fbb8b3d3-9dcd-44b3-9cbc-d5deb8ad9952" alt=""></div>
+        <div class="avatar"><img src="assets/figma-source/feed-all/avatar-1.png" alt=""></div>
         <div class="author-info">
           <span class="author-name">하쿠</span>
           <span class="author-type">일정 후기</span>
@@ -739,18 +769,18 @@ body {
       </div>
       <p class="review-text">동갑내기 남자 둘이서 재미난 러닝🏃🏻‍♂️🏃🏻‍♂️</p>
       <div class="review-imgs">
-        <div class="img-main"><img src="https://www.figma.com/api/mcp/asset/dd5b032b-291c-454c-b89c-98b50bc8a6c0" alt=""></div>
-        <div class="img-sub"><img src="https://www.figma.com/api/mcp/asset/aaeea2a7-ee62-49a2-9988-d89856eb127b" alt=""></div>
+        <div class="img-main"><img src="assets/figma-source/feed-all/post1-main.png" alt=""></div>
+        <div class="img-sub"><img src="assets/figma-source/feed-all/post1-sub.png" alt=""></div>
       </div>
       <div class="review-reaction">
         <div class="reaction-time"><span>3시간 전</span><span>·</span><span>조회 30</span></div>
         <div class="reaction-btns">
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/a0493553-5df5-4e95-a0dc-95c867dfcc7d" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>2</span>
           </div>
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/230fde67-8c24-473b-a212-0bffbb340278" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>3</span>
           </div>
         </div>
@@ -763,7 +793,7 @@ body {
         <span class="review-moim">다산동 새벽요가</span>
         <div class="review-info-row">
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/5afb2c86-e7d0-4e54-8a20-1424ee3d8746" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span>다산동</span>
           </div>
           <span class="info-dot">•</span>
@@ -773,7 +803,7 @@ body {
         </div>
       </div>
       <div class="review-author">
-        <div class="avatar"><img src="https://www.figma.com/api/mcp/asset/dcc0f514-b947-4e9c-8fb9-c24785f5021e" alt=""></div>
+        <div class="avatar"><img src="assets/figma-source/feed-all/avatar-2.png" alt=""></div>
         <div class="author-info">
           <span class="author-name">수빈</span>
           <span class="author-type">자유 게시판</span>
@@ -781,18 +811,18 @@ body {
       </div>
       <p class="review-text">안녕하세요 6월 새벽요가 수련생을 모집합니다.<br>매일 새롭게 주어지는 하루의 주인이 되어보세요. 우리 몸에 신선한 호흡이 머물도록, 먼저 가볍게 움직여보려고 합니다 🪷</p>
       <div class="review-imgs">
-        <div class="img-main"><img src="https://www.figma.com/api/mcp/asset/f79cbe33-dd3b-4fd0-8d3a-574099789808" alt=""></div>
-        <div class="img-sub"><img src="https://www.figma.com/api/mcp/asset/d7d4bbfc-6466-4780-ad0e-c93c9fe75ddf" alt=""></div>
+        <div class="img-main"><img src="assets/figma-source/feed-all/post2-main.png" alt=""></div>
+        <div class="img-sub"><img src="assets/figma-source/feed-all/post2-sub.png" alt=""></div>
       </div>
       <div class="review-reaction">
         <div class="reaction-time"><span>3시간 전</span><span>·</span><span>조회 30</span></div>
         <div class="reaction-btns">
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/a0493553-5df5-4e95-a0dc-95c867dfcc7d" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>2</span>
           </div>
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/230fde67-8c24-473b-a212-0bffbb340278" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>3</span>
           </div>
         </div>
@@ -805,18 +835,18 @@ body {
         <span class="review-moim">커피사랑방</span>
         <div class="review-info-row">
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/4384492b-ce33-4b0c-959f-1201a3c4d17c" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span>다산동</span>
           </div>
           <span class="info-dot">•</span>
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/3e4701c9-8cb1-4944-83be-14e341e80864" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
             <span>6명</span>
           </div>
         </div>
       </div>
       <div class="review-author">
-        <div class="avatar"><img src="https://www.figma.com/api/mcp/asset/e6be6d28-78d5-4236-8e60-d7d68d4106de" alt=""></div>
+        <div class="avatar"><img src="assets/figma-source/feed-all/avatar-3.png" alt=""></div>
         <div class="author-info">
           <span class="author-name">아이러브커피</span>
           <span class="author-type">일정 후기</span>
@@ -824,18 +854,18 @@ body {
       </div>
       <p class="review-text">1주차 카페 투어 완! 모두 너무 반가웠어요~</p>
       <div class="review-imgs">
-        <div class="img-main"><img src="https://www.figma.com/api/mcp/asset/2b8a6d9b-a3d6-4445-8246-687a8c6c1a68" alt=""></div>
-        <div class="img-sub"><img src="https://www.figma.com/api/mcp/asset/262fe9a9-0849-467e-b70d-899aa4541f50" alt=""></div>
+        <div class="img-main"><img src="assets/figma-source/feed-all/post3-main.png" alt=""></div>
+        <div class="img-sub"><img src="assets/figma-source/feed-all/post3-sub.png" alt=""></div>
       </div>
       <div class="review-reaction">
         <div class="reaction-time"><span>18시간 전</span><span>·</span><span>조회 30</span></div>
         <div class="reaction-btns">
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/c08220e3-78e8-47e6-8735-da293c37a3db" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>4</span>
           </div>
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/bc1d2299-e05d-4c1f-bbfd-0852e412770e" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>3</span>
           </div>
         </div>
@@ -846,17 +876,17 @@ body {
 
   <!-- Floating btn -->
   <div class="floating-btn">
-    <img src="https://www.figma.com/api/mcp/asset/6064f990-9cd6-435e-a264-aed1f03266b5" alt="">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 5v14M5 12h14' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     <span>모임 만들기</span>
   </div>
 
   <!-- GNB -->
   <div class="gnb">
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/99300872-41cc-44aa-b990-870b0e769392" alt=""><span class="gnb-label">홈</span></div>
-    <div class="gnb-item active"><img src="https://www.figma.com/api/mcp/asset/de8aae17-88a5-49bf-8eb7-0f0262e60150" alt=""><span class="gnb-label">커뮤니티</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/2d6dc8b3-c354-47df-8744-d8c4c8105df8" alt=""><span class="gnb-label">동네지도</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/869c0b32-9829-41f1-80c8-21f469328aad" alt=""><span class="gnb-label">채팅</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/e3276d06-f90d-4d2b-a165-df2966169754" alt=""><span class="gnb-label">나의 당근</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_home.svg" alt=""><span class="gnb-label">홈</span></div>
+    <div class="gnb-item active"><img src="assets/icons/gnb_comm.svg" alt=""><span class="gnb-label">커뮤니티</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_map.svg" alt=""><span class="gnb-label">동네지도</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_chat.svg" alt=""><span class="gnb-label">채팅</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_my.svg" alt=""><span class="gnb-label">나의 당근</span></div>
     <div class="home-bar"></div>
   </div>
 </div>
@@ -869,7 +899,7 @@ body {
   <div class="status-bar">
     <span class="status-time">9:41</span>
     <div class="status-icons-wrap">
-      <img src="https://www.figma.com/api/mcp/asset/7033a0f9-8d1b-4277-a369-4b60f55ae416" alt="">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='15' viewBox='0 0 72 15' fill='none'%3E%3Cpath d='M2 8h10M7 3v10M18 11h8M20 7h6M22 3h4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='38' y='3' width='24' height='9' rx='2' stroke='black' stroke-width='1.4'/%3E%3Crect x='40' y='5' width='17' height='5' rx='1' fill='black'/%3E%3Cpath d='M64 6v3' stroke='black' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     </div>
   </div>
 
@@ -877,9 +907,9 @@ body {
     <div class="comm-topbar">
       <span class="comm-title">커뮤니티</span>
       <div class="topbar-icons">
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/80dd4578-fd24-4164-acaf-646d11471d1f" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/0f9ed2da-6ae4-400e-8065-fed1efead96c" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/0cddfa95-a835-4d9c-abd9-fa1a8964e319" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='11' cy='11' r='7' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M16.5 16.5L21 21' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 3a7 7 0 00-7 7v4.5l-2 2.5h18l-2-2.5V10a7 7 0 00-7-7z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 19a2 2 0 104 0' stroke='%23868b94' stroke-width='2'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 6h16M4 12h16M4 18h16' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
       </div>
     </div>
     <div class="menu-tab">
@@ -888,7 +918,7 @@ body {
       <span>카페</span>
       <div class="apt-item">
         <span>아파트</span>
-        <img src="https://www.figma.com/api/mcp/asset/bf2c2640-93c1-49db-84af-4a9d4e647bd0" alt="">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 18l6-6-6-6' stroke='%23868b94' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
       </div>
     </div>
   </div>
@@ -926,31 +956,30 @@ body {
         <span class="story-title">인기 모임 스토리</span>
         <div class="story-more">
           <span>전체보기</span>
-          <img src="https://www.figma.com/api/mcp/asset/270fb71c-f445-4dee-ba2f-5e4983c5fa0a" alt="">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 18l6-6-6-6' stroke='%23868b94' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
         </div>
       </div>
       <div class="story-list">
         <div class="video-card" onclick="go('s5')" style="cursor:pointer;">
           <div class="video-thumb">
-            <img src="https://www.figma.com/api/mcp/asset/ed0cdd4c-dcfa-46f6-b877-4ececdc55d42" alt="">
-            <img src="https://www.figma.com/api/mcp/asset/5dc864a8-b16f-497d-91b6-bc8470e1ff2a" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-            <div class="video-play"><img src="https://www.figma.com/api/mcp/asset/91f06001-5dc1-49f3-a248-b7c03812056b" alt="play"></div>
+            <img src="assets/figma-source/feed-popular/story-base.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="assets/figma-source/feed-popular/story-1.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <div class="video-play"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='rgba(0,0,0,0.55)'/%3E%3Cpath d='M13 10l9 6-9 6z' fill='white'/%3E%3C/svg%3E" alt="play"></div>
           </div>
           <p class="video-desc">처음으로 가본 퍼즐인데 다이나믹이 좀 있어서 어쩌구</p>
         </div>
         <div class="video-card" style="cursor:pointer;">
           <div class="video-thumb">
-            <img src="https://www.figma.com/api/mcp/asset/ed0cdd4c-dcfa-46f6-b877-4ececdc55d42" alt="">
-            <img src="https://www.figma.com/api/mcp/asset/5dc864a8-b16f-497d-91b6-bc8470e1ff2a" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-            <img src="https://www.figma.com/api/mcp/asset/de981cc1-657a-4e5c-aa04-01d5b33e228c" alt="" style="position:absolute;width:103.59%;height:105.24%;left:-1.8%;top:-2.86%;max-width:none;object-fit:cover;display:block;">
-            <div class="video-play"><img src="https://www.figma.com/api/mcp/asset/91f06001-5dc1-49f3-a248-b7c03812056b" alt="play"></div>
+            <img src="assets/figma-source/feed-popular/story-base.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="assets/figma-source/feed-popular/story-1.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="assets/figma-source/feed-popular/story-2.png" alt="" style="position:absolute;width:103.59%;height:105.24%;left:-1.8%;top:-2.86%;object-fit:cover;display:block;max-width:none;">
+            <div class="video-play"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='rgba(0,0,0,0.55)'/%3E%3Cpath d='M13 10l9 6-9 6z' fill='white'/%3E%3C/svg%3E" alt="play"></div>
           </div>
           <p class="video-desc">어제 크루장님의 족집게 특강으로 자세랑 페이스 조절</p>
         </div>
         <div class="video-card" style="cursor:pointer;">
           <div class="video-thumb">
-            <img src="https://www.figma.com/api/mcp/asset/b9b7f03d-1d21-43b6-85eb-ed3c87170598" alt="">
-            <div class="video-play"><img src="https://www.figma.com/api/mcp/asset/91f06001-5dc1-49f3-a248-b7c03812056b" alt="play"></div>
+            <img src="assets/figma-source/feed-popular/story-3.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"><div class="video-play"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='rgba(0,0,0,0.55)'/%3E%3Cpath d='M13 10l9 6-9 6z' fill='white'/%3E%3C/svg%3E" alt="play"></div>
           </div>
           <p class="video-desc">영어 회화 토킹 성공적으로 5시간</p>
         </div>
@@ -963,18 +992,18 @@ body {
         <span class="review-moim">커피사랑방</span>
         <div class="review-info-row">
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/cb039422-2965-49fa-86f9-e5d13ce9828e" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span>다산동</span>
           </div>
           <span class="info-dot">•</span>
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/c87229f4-0f52-4dee-a885-0df9ff8f9f57" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
             <span>6명</span>
           </div>
         </div>
       </div>
       <div class="review-author">
-        <div class="avatar"><img src="https://www.figma.com/api/mcp/asset/29fa0628-81db-4509-832e-662dcc234745" alt=""></div>
+        <div class="avatar"><img src="assets/figma-source/feed-popular/avatar-1.png" alt=""></div>
         <div class="author-info">
           <span class="author-name">아이러브커피</span>
           <span class="author-type">일정 후기</span>
@@ -982,18 +1011,18 @@ body {
       </div>
       <p class="review-text">1주차 카페 투어 완! 모두 너무 반가웠어요~</p>
       <div class="review-imgs">
-        <div class="img-main"><img src="https://www.figma.com/api/mcp/asset/0429a3a9-fec4-41a6-8179-7f39e7754af4" alt=""></div>
-        <div class="img-sub"><img src="https://www.figma.com/api/mcp/asset/1e0ce626-108e-4443-a3e9-96e575af7914" alt=""></div>
+        <div class="img-main"><img src="assets/figma-source/feed-popular/post1-main.png" alt=""></div>
+        <div class="img-sub"><img src="assets/figma-source/feed-popular/post1-sub.png" alt=""></div>
       </div>
       <div class="review-reaction">
         <div class="reaction-time"><span>18시간 전</span><span>·</span><span>조회 30</span></div>
         <div class="reaction-btns">
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/d842d19d-4ed7-402c-b92b-16bcbe64b23d" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>4</span>
           </div>
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/8592bd72-b338-4eb4-8200-7843db7fdebb" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>3</span>
           </div>
         </div>
@@ -1006,12 +1035,12 @@ body {
         <span class="review-moim" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:146px;">블로그 글쓰기 &amp; SNS 콘텐츠 만들기</span>
         <div class="review-info-row">
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/cb039422-2965-49fa-86f9-e5d13ce9828e" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span>다산동</span>
           </div>
           <span class="info-dot">•</span>
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/c87229f4-0f52-4dee-a885-0df9ff8f9f57" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
             <span>30명</span>
           </div>
           <span class="info-dot">•</span>
@@ -1019,7 +1048,7 @@ body {
         </div>
       </div>
       <div class="review-author">
-        <div class="avatar"><img src="https://www.figma.com/api/mcp/asset/87d4e4a1-1dcc-4778-a6e0-252e4e3c7c9a" alt=""></div>
+        <div class="avatar"><img src="assets/figma-source/feed-popular/avatar-2.png" alt=""></div>
         <div class="author-info">
           <span class="author-name">김작가</span>
           <span class="author-type">일정 후기</span>
@@ -1028,19 +1057,19 @@ body {
       <p class="review-text">어제 이야기 중 나온 블로그 글쓰기 챌린지, 팔로워 하루만에 400명 만들었습니다. 꾸준히 글을 쓰고 싶은 당신 SNS로 수익화도 이루어보고 싶다면 함께 해용!!</p>
       <div class="review-imgs">
         <div class="img-main" style="overflow:hidden;position:relative;">
-          <img src="https://www.figma.com/api/mcp/asset/641b06d3-c196-4e41-b613-397fff24292a" alt="" style="position:absolute;width:100%;height:133.5%;left:-0.13%;top:-25.17%;object-fit:cover;display:block;max-width:none;">
+          <img src="assets/figma-source/feed-popular/post2-main.png" alt="" style="position:absolute;width:100%;height:133.5%;left:-0.13%;top:-25.17%;object-fit:cover;display:block;max-width:none;">
         </div>
-        <div class="img-sub"><img src="https://www.figma.com/api/mcp/asset/95775839-226c-4568-b372-c293d6f6e4b3" alt=""></div>
+        <div class="img-sub"><img src="assets/figma-source/feed-popular/post2-sub.png" alt=""></div>
       </div>
       <div class="review-reaction">
         <div class="reaction-time"><span>3시간 전</span><span>·</span><span>조회 30</span></div>
         <div class="reaction-btns">
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/d842d19d-4ed7-402c-b92b-16bcbe64b23d" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>2</span>
           </div>
           <div class="reaction-btn">
-            <img src="https://www.figma.com/api/mcp/asset/8592bd72-b338-4eb4-8200-7843db7fdebb" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>3</span>
           </div>
         </div>
@@ -1050,16 +1079,16 @@ body {
   </div>
 
   <div class="floating-btn">
-    <img src="https://www.figma.com/api/mcp/asset/d60e24b5-5205-49b1-9793-971b3876031d" alt="">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 5v14M5 12h14' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     <span>모임 만들기</span>
   </div>
 
   <div class="gnb">
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/99300872-41cc-44aa-b990-870b0e769392" alt=""><span class="gnb-label">홈</span></div>
-    <div class="gnb-item active"><img src="https://www.figma.com/api/mcp/asset/de8aae17-88a5-49bf-8eb7-0f0262e60150" alt=""><span class="gnb-label">커뮤니티</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/2d6dc8b3-c354-47df-8744-d8c4c8105df8" alt=""><span class="gnb-label">동네지도</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/869c0b32-9829-41f1-80c8-21f469328aad" alt=""><span class="gnb-label">채팅</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/e3276d06-f90d-4d2b-a165-df2966169754" alt=""><span class="gnb-label">나의 당근</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_home.svg" alt=""><span class="gnb-label">홈</span></div>
+    <div class="gnb-item active"><img src="assets/icons/gnb_comm.svg" alt=""><span class="gnb-label">커뮤니티</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_map.svg" alt=""><span class="gnb-label">동네지도</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_chat.svg" alt=""><span class="gnb-label">채팅</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_my.svg" alt=""><span class="gnb-label">나의 당근</span></div>
     <div class="home-bar"></div>
   </div>
 </div>
@@ -1072,7 +1101,7 @@ body {
   <div class="status-bar">
     <span class="status-time">9:41</span>
     <div class="status-icons-wrap">
-      <img src="https://www.figma.com/api/mcp/asset/f9bc02de-1172-4bfb-bbf9-59a45082ba06" alt="">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='15' viewBox='0 0 72 15' fill='none'%3E%3Cpath d='M2 8h10M7 3v10M18 11h8M20 7h6M22 3h4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='38' y='3' width='24' height='9' rx='2' stroke='black' stroke-width='1.4'/%3E%3Crect x='40' y='5' width='17' height='5' rx='1' fill='black'/%3E%3Cpath d='M64 6v3' stroke='black' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     </div>
   </div>
 
@@ -1080,9 +1109,9 @@ body {
     <div class="comm-topbar">
       <span class="comm-title">커뮤니티</span>
       <div class="topbar-icons">
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/dd115551-941a-49ea-b6a2-8c0f70b17e21" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/e7f980fa-7bc4-46ac-8a09-4e1acc1c6e3b" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/1987a3af-f672-4d1e-9c18-782ca4b59412" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='11' cy='11' r='7' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M16.5 16.5L21 21' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 3a7 7 0 00-7 7v4.5l-2 2.5h18l-2-2.5V10a7 7 0 00-7-7z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 19a2 2 0 104 0' stroke='%23868b94' stroke-width='2'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 6h16M4 12h16M4 18h16' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
       </div>
     </div>
     <div class="menu-tab">
@@ -1091,7 +1120,7 @@ body {
       <span>카페</span>
       <div class="apt-item">
         <span>아파트</span>
-        <img src="https://www.figma.com/api/mcp/asset/7e19dfac-a3e4-4266-9954-2390a66ec00c" alt="">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 18l6-6-6-6' stroke='%23868b94' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
       </div>
     </div>
   </div>
@@ -1124,20 +1153,18 @@ body {
 
   <div class="scroll-area">
     <!-- Top3 banner -->
-    <div class="top3-wrap">
-      <img src="https://www.figma.com/api/mcp/asset/6bb1d641-2370-4c80-94df-c72e50489934" alt="">
-    </div>
+    <div class="top3-wrap"><img src="assets/figma-source/neighborhood-popular/top3.png" alt=""></div>
 
     <!-- Rank 4~8 -->
     <div class="popular-list">
       <div class="popular-item">
         <div class="popular-left">
           <span class="popular-rank">4</span>
-          <div class="popular-thumb"><img src="https://www.figma.com/api/mcp/asset/3b6be536-1c54-4090-bcce-fb28967ccc8e" alt=""></div>
+          <div class="popular-thumb"><img src="assets/figma-source/neighborhood-popular/rank-1.png" alt=""></div>
           <div class="popular-info">
             <span class="popular-name">하루런 in 다산</span>
             <div class="popular-loc">
-              <img src="https://www.figma.com/api/mcp/asset/638987f1-65fb-4151-986b-12a4ebc83168" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
           </div>
@@ -1147,11 +1174,11 @@ body {
       <div class="popular-item">
         <div class="popular-left">
           <span class="popular-rank">5</span>
-          <div class="popular-thumb"><img src="https://www.figma.com/api/mcp/asset/5e0f2a42-e295-429a-90a4-2eb4ba566ab2" alt=""></div>
+          <div class="popular-thumb"><img src="assets/figma-source/neighborhood-popular/rank-2.png" alt=""></div>
           <div class="popular-info">
             <span class="popular-name">20대 도파민 주유소</span>
             <div class="popular-loc">
-              <img src="https://www.figma.com/api/mcp/asset/638987f1-65fb-4151-986b-12a4ebc83168" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>동구동</span>
             </div>
           </div>
@@ -1161,11 +1188,11 @@ body {
       <div class="popular-item">
         <div class="popular-left">
           <span class="popular-rank">6</span>
-          <div class="popular-thumb"><img src="https://www.figma.com/api/mcp/asset/27bcab97-8796-435d-922e-c5ccf2f369a1" alt=""></div>
+          <div class="popular-thumb"><img src="assets/figma-source/neighborhood-popular/rank-3.png" alt=""></div>
           <div class="popular-info">
             <span class="popular-name">다산동 새벽요가</span>
             <div class="popular-loc">
-              <img src="https://www.figma.com/api/mcp/asset/638987f1-65fb-4151-986b-12a4ebc83168" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
           </div>
@@ -1175,11 +1202,11 @@ body {
       <div class="popular-item">
         <div class="popular-left">
           <span class="popular-rank">7</span>
-          <div class="popular-thumb"><img src="https://www.figma.com/api/mcp/asset/d40a1cf7-61e6-4903-aa3c-793304cbde34" alt=""></div>
+          <div class="popular-thumb"><img src="assets/figma-source/neighborhood-popular/rank-4.png" alt=""></div>
           <div class="popular-info">
             <span class="popular-name">같이 등산하는 모임</span>
             <div class="popular-loc">
-              <img src="https://www.figma.com/api/mcp/asset/638987f1-65fb-4151-986b-12a4ebc83168" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>별내동</span>
             </div>
           </div>
@@ -1189,11 +1216,11 @@ body {
       <div class="popular-item">
         <div class="popular-left">
           <span class="popular-rank">8</span>
-          <div class="popular-thumb"><img src="https://www.figma.com/api/mcp/asset/e41507bd-7372-4177-be9a-4b40235ab6d0" alt=""></div>
+          <div class="popular-thumb"><img src="assets/figma-source/neighborhood-popular/rank-5.png" alt=""></div>
           <div class="popular-info">
             <span class="popular-name">같이 책 읽읍시다</span>
             <div class="popular-loc">
-              <img src="https://www.figma.com/api/mcp/asset/638987f1-65fb-4151-986b-12a4ebc83168" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
           </div>
@@ -1205,16 +1232,16 @@ body {
   </div>
 
   <div class="floating-btn">
-    <img src="https://www.figma.com/api/mcp/asset/d36c0f83-5ed4-4e02-a374-693305e99ffe" alt="">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 5v14M5 12h14' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     <span>모임 만들기</span>
   </div>
 
   <div class="gnb">
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/99300872-41cc-44aa-b990-870b0e769392" alt=""><span class="gnb-label">홈</span></div>
-    <div class="gnb-item active"><img src="https://www.figma.com/api/mcp/asset/de8aae17-88a5-49bf-8eb7-0f0262e60150" alt=""><span class="gnb-label">커뮤니티</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/2d6dc8b3-c354-47df-8744-d8c4c8105df8" alt=""><span class="gnb-label">동네지도</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/869c0b32-9829-41f1-80c8-21f469328aad" alt=""><span class="gnb-label">채팅</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/e3276d06-f90d-4d2b-a165-df2966169754" alt=""><span class="gnb-label">나의 당근</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_home.svg" alt=""><span class="gnb-label">홈</span></div>
+    <div class="gnb-item active"><img src="assets/icons/gnb_comm.svg" alt=""><span class="gnb-label">커뮤니티</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_map.svg" alt=""><span class="gnb-label">동네지도</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_chat.svg" alt=""><span class="gnb-label">채팅</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_my.svg" alt=""><span class="gnb-label">나의 당근</span></div>
     <div class="home-bar"></div>
   </div>
 </div>
@@ -1227,7 +1254,7 @@ body {
   <div class="status-bar">
     <span class="status-time">9:41</span>
     <div class="status-icons-wrap">
-      <img src="https://www.figma.com/api/mcp/asset/61e33613-c515-46be-a393-4e90eb686370" alt="">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='15' viewBox='0 0 72 15' fill='none'%3E%3Cpath d='M2 8h10M7 3v10M18 11h8M20 7h6M22 3h4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='38' y='3' width='24' height='9' rx='2' stroke='black' stroke-width='1.4'/%3E%3Crect x='40' y='5' width='17' height='5' rx='1' fill='black'/%3E%3Cpath d='M64 6v3' stroke='black' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     </div>
   </div>
 
@@ -1235,9 +1262,9 @@ body {
     <div class="comm-topbar">
       <span class="comm-title">커뮤니티</span>
       <div class="topbar-icons">
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/413db51d-096e-41cb-a648-607dca64b007" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/30138d72-c0ba-4ac1-84eb-3c70f7369376" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/2bf2f4d9-b249-42d4-ae87-448fe75745f0" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='11' cy='11' r='7' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M16.5 16.5L21 21' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 3a7 7 0 00-7 7v4.5l-2 2.5h18l-2-2.5V10a7 7 0 00-7-7z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 19a2 2 0 104 0' stroke='%23868b94' stroke-width='2'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 6h16M4 12h16M4 18h16' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
       </div>
     </div>
     <div class="menu-tab">
@@ -1246,7 +1273,7 @@ body {
       <span>카페</span>
       <div class="apt-item">
         <span>아파트</span>
-        <img src="https://www.figma.com/api/mcp/asset/e62932f0-03ce-42a1-b941-e9102f22eed4" alt="">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 18l6-6-6-6' stroke='%23868b94' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
       </div>
     </div>
   </div>
@@ -1282,18 +1309,18 @@ body {
 
       <!-- 1. 소심한 동네 사진 -->
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/b1f54586-f5db-4e60-9ee7-afe3fa2d1ef3" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-1.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">소심한 동네 사진</span>
           <p class="moim-desc">안녕하세요 저는 소심하지만 출사는 좋아하고 사람...</p>
           <div class="moim-meta">
             <div class="moim-loc">
-              <img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
             <span class="meta-dot">•</span>
             <div class="moim-people">
-              <img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
               <span>30명</span>
             </div>
             <span class="meta-dot">•</span>
@@ -1304,18 +1331,18 @@ body {
 
       <!-- 2. 세계문학전집 독서모임 -->
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/257164c4-9421-4dbd-bd8a-456e62e7b3a6" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-2.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">세계문학전집 독서모임</span>
           <p class="moim-desc">혼자하면 절대 못하는 책읽기 이제 같이 해요</p>
           <div class="moim-meta">
             <div class="moim-loc">
-              <img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
             <span class="meta-dot">•</span>
             <div class="moim-people">
-              <img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
               <span>29명</span>
             </div>
             <span class="meta-dot">•</span>
@@ -1326,18 +1353,18 @@ body {
 
       <!-- 3. 통기타클럽 (일정 모집 중 없음) -->
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/749f1b43-90d2-48bb-a205-6817cfff9639" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-3.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">통기타클럽</span>
           <p class="moim-desc">남양주 다산에서 만나는 따듯한 통기타 클럽에 같이 만나요</p>
           <div class="moim-meta">
             <div class="moim-loc">
-              <img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
             <span class="meta-dot">•</span>
             <div class="moim-people">
-              <img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
               <span>15명</span>
             </div>
           </div>
@@ -1346,18 +1373,18 @@ body {
 
       <!-- 4. 닌텐도 스위치 잼버리파티 (일정 모집 중 없음) -->
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/c6cec765-3093-46a4-885a-650c31182245" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-4.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">닌텐도 스위치 잼버리파티</span>
           <p class="moim-desc">잼버리 컴퓨터랑만 해서 재미없으신분들! 다같이해용</p>
           <div class="moim-meta">
             <div class="moim-loc">
-              <img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
             <span class="meta-dot">•</span>
             <div class="moim-people">
-              <img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
               <span>30명</span>
             </div>
           </div>
@@ -1366,18 +1393,18 @@ body {
 
       <!-- 5. 산책모임 -->
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/d2700d52-00cc-493e-99a9-7137103ce6a2" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-5.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">산책모임</span>
           <p class="moim-desc">다산동에 있는 견주분들과 함께 하고 싶어요</p>
           <div class="moim-meta">
             <div class="moim-loc">
-              <img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
             <span class="meta-dot">•</span>
             <div class="moim-people">
-              <img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
               <span>50명</span>
             </div>
             <span class="meta-dot">•</span>
@@ -1388,18 +1415,18 @@ body {
 
       <!-- 6. 클라이밍 (일정 모집 중 없음) -->
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/429bf206-293e-42a8-8130-9b1b417e1d6e" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-6.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">클라이밍</span>
           <p class="moim-desc">안녕하세요 저는 소심하지만 출사는 좋아하고 사람...</p>
           <div class="moim-meta">
             <div class="moim-loc">
-              <img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
               <span>다산동</span>
             </div>
             <span class="meta-dot">•</span>
             <div class="moim-people">
-              <img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt="">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
               <span>30명</span>
             </div>
           </div>
@@ -1408,80 +1435,80 @@ body {
 
       <!-- 7~12: 반복 -->
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/b1f54586-f5db-4e60-9ee7-afe3fa2d1ef3" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-7.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">소심한 동네 사진</span>
           <p class="moim-desc">안녕하세요 저는 소심하지만 출사는 좋아하고 사람...</p>
           <div class="moim-meta">
-            <div class="moim-loc"><img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt=""><span>다산동</span></div>
+            <div class="moim-loc"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt=""><span>다산동</span></div>
             <span class="meta-dot">•</span>
-            <div class="moim-people"><img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt=""><span>30명</span></div>
+            <div class="moim-people"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""><span>30명</span></div>
             <span class="meta-dot">•</span>
             <span class="status-blue">일정 모집 중</span>
           </div>
         </div>
       </div>
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/257164c4-9421-4dbd-bd8a-456e62e7b3a6" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-1.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">세계문학전집 독서모임</span>
           <p class="moim-desc">혼자하면 절대 못하는 책읽기 이제 같이 해요</p>
           <div class="moim-meta">
-            <div class="moim-loc"><img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt=""><span>다산동</span></div>
+            <div class="moim-loc"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt=""><span>다산동</span></div>
             <span class="meta-dot">•</span>
-            <div class="moim-people"><img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt=""><span>29명</span></div>
+            <div class="moim-people"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""><span>29명</span></div>
             <span class="meta-dot">•</span>
             <span class="status-blue">일정 모집 중</span>
           </div>
         </div>
       </div>
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/749f1b43-90d2-48bb-a205-6817cfff9639" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-2.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">통기타클럽</span>
           <p class="moim-desc">남양주 다산에서 만나는 따듯한 통기타 클럽에 같이 만나요</p>
           <div class="moim-meta">
-            <div class="moim-loc"><img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt=""><span>다산동</span></div>
+            <div class="moim-loc"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt=""><span>다산동</span></div>
             <span class="meta-dot">•</span>
-            <div class="moim-people"><img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt=""><span>15명</span></div>
+            <div class="moim-people"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""><span>15명</span></div>
           </div>
         </div>
       </div>
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/c6cec765-3093-46a4-885a-650c31182245" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-3.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">닌텐도 스위치 잼버리파티</span>
           <p class="moim-desc">잼버리 컴퓨터랑만 해서 재미없으신분들! 다같이해용</p>
           <div class="moim-meta">
-            <div class="moim-loc"><img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt=""><span>다산동</span></div>
+            <div class="moim-loc"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt=""><span>다산동</span></div>
             <span class="meta-dot">•</span>
-            <div class="moim-people"><img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt=""><span>30명</span></div>
+            <div class="moim-people"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""><span>30명</span></div>
           </div>
         </div>
       </div>
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/d2700d52-00cc-493e-99a9-7137103ce6a2" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-4.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">산책모임</span>
           <p class="moim-desc">다산동에 있는 견주분들과 함께 하고 싶어요</p>
           <div class="moim-meta">
-            <div class="moim-loc"><img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt=""><span>다산동</span></div>
+            <div class="moim-loc"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt=""><span>다산동</span></div>
             <span class="meta-dot">•</span>
-            <div class="moim-people"><img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt=""><span>50명</span></div>
+            <div class="moim-people"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""><span>50명</span></div>
             <span class="meta-dot">•</span>
             <span class="status-blue">일정 모집 중</span>
           </div>
         </div>
       </div>
       <div class="moim-item">
-        <div class="moim-thumb"><img src="https://www.figma.com/api/mcp/asset/429bf206-293e-42a8-8130-9b1b417e1d6e" alt=""></div>
+        <div class="moim-thumb"><img src="assets/figma-source/neighborhood-recommended/card-5.png" alt=""></div>
         <div class="moim-info">
           <span class="moim-name">클라이밍</span>
           <p class="moim-desc">안녕하세요 저는 소심하지만 출사는 좋아하고 사람...</p>
           <div class="moim-meta">
-            <div class="moim-loc"><img src="https://www.figma.com/api/mcp/asset/e6f964ef-cbca-420d-894c-97917436b5aa" alt=""><span>다산동</span></div>
+            <div class="moim-loc"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt=""><span>다산동</span></div>
             <span class="meta-dot">•</span>
-            <div class="moim-people"><img src="https://www.figma.com/api/mcp/asset/cfa4111e-e18a-4419-8d1d-2e258d5518c7" alt=""><span>30명</span></div>
+            <div class="moim-people"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""><span>30명</span></div>
           </div>
         </div>
       </div>
@@ -1491,11 +1518,11 @@ body {
   </div>
 
   <div class="gnb">
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/99300872-41cc-44aa-b990-870b0e769392" alt=""><span class="gnb-label">홈</span></div>
-    <div class="gnb-item active"><img src="https://www.figma.com/api/mcp/asset/de8aae17-88a5-49bf-8eb7-0f0262e60150" alt=""><span class="gnb-label">커뮤니티</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/2d6dc8b3-c354-47df-8744-d8c4c8105df8" alt=""><span class="gnb-label">동네지도</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/869c0b32-9829-41f1-80c8-21f469328aad" alt=""><span class="gnb-label">채팅</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/e3276d06-f90d-4d2b-a165-df2966169754" alt=""><span class="gnb-label">나의 당근</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_home.svg" alt=""><span class="gnb-label">홈</span></div>
+    <div class="gnb-item active"><img src="assets/icons/gnb_comm.svg" alt=""><span class="gnb-label">커뮤니티</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_map.svg" alt=""><span class="gnb-label">동네지도</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_chat.svg" alt=""><span class="gnb-label">채팅</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_my.svg" alt=""><span class="gnb-label">나의 당근</span></div>
     <div class="home-bar"></div>
   </div>
 </div>
@@ -1507,7 +1534,7 @@ body {
 <div class="screen" id="s5">
   <div style="position:relative;width:100%;height:100%;background:#111;overflow:hidden;">
     <!-- Background image -->
-    <img src="https://www.figma.com/api/mcp/asset/556016a4-c390-4acb-a75f-274d5e9fc804" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+    <img src="assets/figma-crops/story_bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
     <!-- Top gradient -->
     <div style="position:absolute;top:0;left:0;right:0;height:220px;background:linear-gradient(to bottom,rgba(0,0,0,0.72) 0%,transparent 100%);pointer-events:none;z-index:1;"></div>
     <!-- Bottom gradient -->
@@ -1631,7 +1658,7 @@ body {
   <div class="status-bar">
     <span class="status-time">9:41</span>
     <div class="status-icons-wrap">
-      <img src="https://www.figma.com/api/mcp/asset/1111a023-46fd-4f79-b7b6-5315ca163477" alt="">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='15' viewBox='0 0 72 15' fill='none'%3E%3Cpath d='M2 8h10M7 3v10M18 11h8M20 7h6M22 3h4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='38' y='3' width='24' height='9' rx='2' stroke='black' stroke-width='1.4'/%3E%3Crect x='40' y='5' width='17' height='5' rx='1' fill='black'/%3E%3Cpath d='M64 6v3' stroke='black' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     </div>
   </div>
 
@@ -1639,9 +1666,9 @@ body {
     <div class="comm-topbar">
       <span class="comm-title">커뮤니티</span>
       <div class="topbar-icons">
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/ffb22767-fc5c-42c4-9614-56ecf32b3439" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/e18ebf7f-02e5-4f75-84d9-7e0e4b7c7739" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/259d16b7-c5c7-43ba-adbc-11a589d26e19" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='11' cy='11' r='7' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M16.5 16.5L21 21' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 3a7 7 0 00-7 7v4.5l-2 2.5h18l-2-2.5V10a7 7 0 00-7-7z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 19a2 2 0 104 0' stroke='%23868b94' stroke-width='2'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 6h16M4 12h16M4 18h16' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
       </div>
     </div>
     <div class="menu-tab">
@@ -1650,7 +1677,7 @@ body {
       <span>카페</span>
       <div class="apt-item">
         <span>아파트</span>
-        <img src="https://www.figma.com/api/mcp/asset/5b072bbc-b535-4c8d-a5ee-4da847bc8982" alt="">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 18l6-6-6-6' stroke='%23868b94' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
       </div>
     </div>
   </div>
@@ -1671,52 +1698,31 @@ body {
   <!-- Category icon filter -->
   <div class="cat-filter-row">
     <div class="cat-filter-item">
-      <div class="cat-icon active">
-        <div style="position:relative;width:24px;height:24px;overflow:visible;">
-          <div style="position:absolute;top:16.12%;left:35.97%;right:2.08%;bottom:8.33%;">
-            <img src="https://www.figma.com/api/mcp/asset/cb7e0071-078d-42c7-a19d-cd9bbd6fb61d" alt="" style="width:100%;height:100%;display:block;">
-          </div>
-          <div style="position:absolute;top:8.49%;left:2.08%;right:29.47%;bottom:8.33%;">
-            <img src="https://www.figma.com/api/mcp/asset/766566ec-91d2-4289-9964-8f71a05de3f7" alt="" style="width:100%;height:100%;display:block;">
-          </div>
-        </div>
-      </div>
-      <span class="cat-label">전체</span>
+      <div class="cat-icon active"><div class="cat-all-icon"><img src="assets/figma-source/category/all-vector-1.svg" alt=""><img src="assets/figma-source/category/all-vector-2.svg" alt=""></div></div>
+      <span class="cat-label" style="font-weight:700;color:#1a1c20;">전체</span>
     </div>
     <div class="cat-filter-item" onclick="go('s10')" style="cursor:pointer;">
-      <div class="cat-icon">
-        <img src="https://www.figma.com/api/mcp/asset/343a653c-8c1e-469c-90d6-199ae0bcfb8d" alt="">
-      </div>
+      <div class="cat-icon"><img src="assets/figma-source/category/band.png" alt=""></div>
       <span class="cat-label">밴드</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon">
-        <img src="https://www.figma.com/api/mcp/asset/b1ac0461-c23d-4979-8640-bdfba6ee2176" alt="">
-      </div>
+      <div class="cat-icon"><img src="assets/figma-source/category/introvert.png" alt=""></div>
       <span class="cat-label">내향인</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon">
-        <img src="https://www.figma.com/api/mcp/asset/4688d90a-9cae-42a1-ad30-a074e0475d61" alt="">
-      </div>
+      <div class="cat-icon"><img src="assets/figma-source/category/running.png" alt=""></div>
       <span class="cat-label">러닝</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon">
-        <img src="https://www.figma.com/api/mcp/asset/e15b68fe-67ac-4370-a6cc-1a236a6a52a5" alt="">
-      </div>
+      <div class="cat-icon"><img src="assets/figma-source/category/restaurant.png" alt=""></div>
       <span class="cat-label">맛집</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon">
-        <img src="https://www.figma.com/api/mcp/asset/f567e8b1-a608-4f60-8987-1ea83c471b6a" alt="">
-      </div>
+      <div class="cat-icon"><img src="assets/figma-source/category/dessert.png" alt=""></div>
       <span class="cat-label">디저트</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon">
-        <img src="https://www.figma.com/api/mcp/asset/1bedabb3-4936-4ebd-9ea8-cd9cdd96b42b" alt="">
-      </div>
+      <div class="cat-icon"><img src="assets/figma-source/category/hiking.png" alt=""></div>
       <span class="cat-label">등산</span>
     </div>
   </div>
@@ -1743,12 +1749,12 @@ body {
         <span class="ytm-moim-name">하루런 in 다산</span>
         <div class="ytm-moim-info">
           <div class="ytm-info-loc">
-            <img src="https://www.figma.com/api/mcp/asset/dfee1bb0-75f8-4786-83aa-3179571ad4fd" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span class="ytm-info-text">다산동</span>
           </div>
           <span class="ytm-info-dot">•</span>
           <div class="ytm-info-loc">
-            <img src="https://www.figma.com/api/mcp/asset/6777f6b1-143e-4d49-86e6-bf659a5de10b" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span class="ytm-info-text">30명</span>
           </div>
           <span class="ytm-info-dot">•</span>
@@ -1757,7 +1763,7 @@ body {
       </div>
       <div class="ytm-author-row">
         <div class="ytm-avatar">
-          <img src="https://www.figma.com/api/mcp/asset/b33030fb-0b24-4624-9839-326c2e17937d" alt="">
+          <img src="assets/figma-source/feed-recommended/avatar-1.png" alt="">
         </div>
         <div>
           <div class="ytm-author-name">하쿠</div>
@@ -1767,10 +1773,10 @@ body {
       <p class="ytm-text">동갑내기 남자 둘이서 재미난 러닝 🏃🏻‍♂️🏃🏻‍♂️</p>
       <div class="ytm-photo-row">
         <div class="ytm-photo-main">
-          <img src="https://www.figma.com/api/mcp/asset/5df38969-4b98-4f0f-8bce-97a9f8e5cdbf" alt="">
+          <img src="assets/figma-source/feed-recommended/post1-main.png" alt="">
         </div>
         <div class="ytm-photo-side">
-          <img src="https://www.figma.com/api/mcp/asset/04bb207d-771f-4680-83ca-26f79901ba36" alt="">
+          <img src="assets/figma-source/feed-recommended/post1-sub.png" alt="">
         </div>
       </div>
       <div class="ytm-footer">
@@ -1779,11 +1785,11 @@ body {
         </div>
         <div class="ytm-reactions">
           <div class="ytm-reaction">
-            <img src="https://www.figma.com/api/mcp/asset/507d514b-4176-4f2c-b5b7-6da5fb241465" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>2</span>
           </div>
           <div class="ytm-reaction">
-            <img src="https://www.figma.com/api/mcp/asset/466e633f-e68c-43bb-b3cc-4559a500e9e2" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>3</span>
           </div>
         </div>
@@ -1796,7 +1802,7 @@ body {
         <span class="ytm-moim-name">다산동 새벽요가</span>
         <div class="ytm-moim-info">
           <div class="ytm-info-loc">
-            <img src="https://www.figma.com/api/mcp/asset/dfee1bb0-75f8-4786-83aa-3179571ad4fd" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span class="ytm-info-text">다산동</span>
           </div>
           <span class="ytm-info-dot">•</span>
@@ -1807,7 +1813,7 @@ body {
       </div>
       <div class="ytm-author-row">
         <div class="ytm-avatar">
-          <img src="https://www.figma.com/api/mcp/asset/2555ef28-b4b0-478d-bc62-a889752f95a9" alt="">
+          <img src="assets/figma-source/feed-recommended/avatar-2.png" alt="">
         </div>
         <div>
           <div class="ytm-author-name">수빈</div>
@@ -1817,10 +1823,10 @@ body {
       <p class="ytm-text">안녕하세요 6월 새벽요가 수련생을 모집합니다.<br>매일 새롭게 주어지는 하루의 주인이 되어보세요. 우리 몸에 신선한 호흡이 머물도록, 먼저 가볍게 움직여보려고 합니다 🪷</p>
       <div class="ytm-photo-row">
         <div class="ytm-photo-main">
-          <img src="https://www.figma.com/api/mcp/asset/173206fd-53dc-4847-b835-96b3d7e3d711" alt="">
+          <img src="assets/figma-source/feed-recommended/post2-main.png" alt="">
         </div>
         <div class="ytm-photo-side">
-          <img src="https://www.figma.com/api/mcp/asset/e3cc27db-06bf-463f-8e4e-5b6c13b32f97" alt="">
+          <img src="assets/figma-source/feed-recommended/post2-sub.png" alt="">
         </div>
       </div>
       <div class="ytm-footer">
@@ -1829,11 +1835,11 @@ body {
         </div>
         <div class="ytm-reactions">
           <div class="ytm-reaction">
-            <img src="https://www.figma.com/api/mcp/asset/507d514b-4176-4f2c-b5b7-6da5fb241465" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>2</span>
           </div>
           <div class="ytm-reaction">
-            <img src="https://www.figma.com/api/mcp/asset/466e633f-e68c-43bb-b3cc-4559a500e9e2" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
             <span>3</span>
           </div>
         </div>
@@ -1844,11 +1850,11 @@ body {
   </div>
 
   <div class="gnb">
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/99300872-41cc-44aa-b990-870b0e769392" alt=""><span class="gnb-label">홈</span></div>
-    <div class="gnb-item active"><img src="https://www.figma.com/api/mcp/asset/de8aae17-88a5-49bf-8eb7-0f0262e60150" alt=""><span class="gnb-label">커뮤니티</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/2d6dc8b3-c354-47df-8744-d8c4c8105df8" alt=""><span class="gnb-label">동네지도</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/869c0b32-9829-41f1-80c8-21f469328aad" alt=""><span class="gnb-label">채팅</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/e3276d06-f90d-4d2b-a165-df2966169754" alt=""><span class="gnb-label">나의 당근</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_home.svg" alt=""><span class="gnb-label">홈</span></div>
+    <div class="gnb-item active"><img src="assets/icons/gnb_comm.svg" alt=""><span class="gnb-label">커뮤니티</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_map.svg" alt=""><span class="gnb-label">동네지도</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_chat.svg" alt=""><span class="gnb-label">채팅</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_my.svg" alt=""><span class="gnb-label">나의 당근</span></div>
     <div class="home-bar"></div>
   </div>
 </div>
@@ -1861,7 +1867,7 @@ body {
   <div class="status-bar">
     <span class="status-time">9:41</span>
     <div class="status-icons-wrap">
-      <img src="https://www.figma.com/api/mcp/asset/ce18e499-b31a-45dd-9ead-8eab0de60770" alt="">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='15' viewBox='0 0 72 15' fill='none'%3E%3Cpath d='M2 8h10M7 3v10M18 11h8M20 7h6M22 3h4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='38' y='3' width='24' height='9' rx='2' stroke='black' stroke-width='1.4'/%3E%3Crect x='40' y='5' width='17' height='5' rx='1' fill='black'/%3E%3Cpath d='M64 6v3' stroke='black' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     </div>
   </div>
 
@@ -1869,9 +1875,9 @@ body {
     <div class="comm-topbar">
       <span class="comm-title">커뮤니티</span>
       <div class="topbar-icons">
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/2549d2ab-641f-47d3-9c53-3765f10bc174" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/2831ed29-80d3-479f-8f7d-d782b4b23162" alt=""></div>
-        <div class="icon-btn"><img src="https://www.figma.com/api/mcp/asset/b399e9a1-cbfc-40f4-8f1e-f29682e05559" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='11' cy='11' r='7' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M16.5 16.5L21 21' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 3a7 7 0 00-7 7v4.5l-2 2.5h18l-2-2.5V10a7 7 0 00-7-7z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 19a2 2 0 104 0' stroke='%23868b94' stroke-width='2'/%3E%3C/svg%3E" alt=""></div>
+        <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 6h16M4 12h16M4 18h16' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt=""></div>
       </div>
     </div>
     <div class="menu-tab">
@@ -1880,7 +1886,7 @@ body {
       <span>카페</span>
       <div class="apt-item">
         <span>아파트</span>
-        <img src="https://www.figma.com/api/mcp/asset/582fe60c-7ddc-4dc8-9e22-c1c6eaff7a3d" alt="">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 18l6-6-6-6' stroke='%23868b94' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">
       </div>
     </div>
   </div>
@@ -1901,42 +1907,31 @@ body {
   <!-- Category filter: 밴드 selected -->
   <div class="cat-filter-row">
     <div class="cat-filter-item" onclick="go('s7')" style="cursor:pointer;">
-      <div class="cat-icon" style="background:#f3f4f5;">
-        <div style="position:relative;width:24px;height:24px;overflow:visible;">
-          <div style="position:absolute;top:16.12%;left:35.97%;right:2.08%;bottom:8.33%;">
-            <img src="https://www.figma.com/api/mcp/asset/f862587c-a348-4cd2-bfad-5cc1d14cd3d9" alt="" style="width:100%;height:100%;display:block;">
-          </div>
-          <div style="position:absolute;top:8.49%;left:2.08%;right:29.47%;bottom:8.33%;">
-            <img src="https://www.figma.com/api/mcp/asset/d10dff44-b5f6-448c-9ac1-4ddd2b6ce0b7" alt="" style="width:100%;height:100%;display:block;">
-          </div>
-        </div>
-      </div>
+      <div class="cat-icon"><div class="cat-all-icon"><img src="assets/figma-source/category/all-vector-1.svg" alt=""><img src="assets/figma-source/category/all-vector-2.svg" alt=""></div></div>
       <span class="cat-label">전체</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon active" style="background:#2a3038;">
-        <img src="https://www.figma.com/api/mcp/asset/13aba318-bac1-4d4c-9efe-5b47fbb5909b" alt="">
-      </div>
+      <div class="cat-icon active"><img src="assets/figma-source/category/band.png" alt=""></div>
       <span class="cat-label" style="font-weight:700;color:#1a1c20;">밴드</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon"><img src="https://www.figma.com/api/mcp/asset/f7059a24-6be3-43b6-8511-61cd8d2dc2ea" alt=""></div>
+      <div class="cat-icon"><img src="assets/figma-source/category/introvert.png" alt=""></div>
       <span class="cat-label">내향인</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon"><img src="https://www.figma.com/api/mcp/asset/89a06e69-1ddd-4c60-aa45-2ca66bfd61af" alt=""></div>
+      <div class="cat-icon"><img src="assets/figma-source/category/running.png" alt=""></div>
       <span class="cat-label">러닝</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon"><img src="https://www.figma.com/api/mcp/asset/c378a52f-9f78-4a06-a5f6-5124e197d00d" alt=""></div>
+      <div class="cat-icon"><img src="assets/figma-source/category/restaurant.png" alt=""></div>
       <span class="cat-label">맛집</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon"><img src="https://www.figma.com/api/mcp/asset/487e0b9e-9e8a-4f81-a997-a7fd60fbaa59" alt=""></div>
+      <div class="cat-icon"><img src="assets/figma-source/category/dessert.png" alt=""></div>
       <span class="cat-label">디저트</span>
     </div>
     <div class="cat-filter-item">
-      <div class="cat-icon"><img src="https://www.figma.com/api/mcp/asset/a80cfc66-b07d-4c03-bb35-55bb9b43ce0d" alt=""></div>
+      <div class="cat-icon"><img src="assets/figma-source/category/hiking.png" alt=""></div>
       <span class="cat-label">등산</span>
     </div>
   </div>
@@ -1960,12 +1955,12 @@ body {
         <span class="review-moim">다산 클럽</span>
         <div class="review-info-row">
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/bb8079bb-9478-42f2-80d0-96b1dc2d1c97" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span>다산동</span>
           </div>
           <span class="info-dot">•</span>
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/c5dacc40-a0e1-4710-8163-99cb31cf3e97" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
             <span>30명</span>
           </div>
           <span class="info-dot">•</span>
@@ -1973,7 +1968,7 @@ body {
         </div>
       </div>
       <div class="review-author">
-        <div class="avatar"><img src="https://www.figma.com/api/mcp/asset/78888f8a-df21-45b7-8b81-fc91fc1ba71e" alt=""></div>
+        <div class="avatar"><img src="assets/496a4bbdaa8426d2c5b4207711ef773f21db88b3.png" alt=""></div>
         <div class="author-info">
           <span class="author-name">kevin</span>
           <span class="author-type">자유 게시판</span>
@@ -1981,14 +1976,14 @@ body {
       </div>
       <p class="review-text">금주도 일요일 1시경 합주 연주 진행합니다<br>사릉로 329 지하 1층</p>
       <div class="review-imgs">
-        <div class="img-main"><img src="https://www.figma.com/api/mcp/asset/4a943593-f567-4da6-96a3-9aa611e00b86" alt=""></div>
-        <div class="img-sub"><img src="https://www.figma.com/api/mcp/asset/9def5995-0d06-43fd-bf59-770ea8aa8ac0" alt=""></div>
+        <div class="img-main"><img src="assets/figma-source/band/post1-main.png" alt=""></div>
+        <div class="img-sub"><img src="assets/figma-source/band/post1-sub.png" alt=""></div>
       </div>
       <div class="review-reaction">
         <div class="reaction-time"><span>3시간 전</span><span>·</span><span>조회 30</span></div>
         <div class="reaction-btns">
-          <div class="reaction-btn"><img src="https://www.figma.com/api/mcp/asset/7acb0363-b086-4668-a814-59c6d7a9a53e" alt=""><span>2</span></div>
-          <div class="reaction-btn"><img src="https://www.figma.com/api/mcp/asset/e4b859e4-5998-4c02-944f-e5e48930b065" alt=""><span>3</span></div>
+          <div class="reaction-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt=""><span>2</span></div>
+          <div class="reaction-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt=""><span>3</span></div>
         </div>
       </div>
     </div>
@@ -1999,18 +1994,18 @@ body {
         <span class="review-moim">RE;Band</span>
         <div class="review-info-row">
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/bb8079bb-9478-42f2-80d0-96b1dc2d1c97" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span>다산동</span>
           </div>
           <span class="info-dot">•</span>
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/c5dacc40-a0e1-4710-8163-99cb31cf3e97" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='9' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='7' r='3' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M15 14c.78-.32 1.6-.5 2.5-.5 2.761 0 5 2.239 5 5' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
             <span>6명</span>
           </div>
         </div>
       </div>
       <div class="review-author">
-        <div class="avatar"><img src="https://www.figma.com/api/mcp/asset/9442bef3-433d-4f06-85fc-d03b26aea335" alt=""></div>
+        <div class="avatar"><img src="assets/496a4bbdaa8426d2c5b4207711ef773f21db88b3.png" alt=""></div>
         <div class="author-info">
           <span class="author-name">Kjulia/82/여</span>
           <span class="author-type">일정 후기</span>
@@ -2018,13 +2013,13 @@ body {
       </div>
       <p class="review-text">이번주도 연습 완<br>다음주 합주도 기대됩니다:)</p>
       <div class="review-imgs" style="height:176px;">
-        <div class="img-main" style="width:100%;"><img src="https://www.figma.com/api/mcp/asset/f44726db-2f6d-461d-9e11-6d982b83d935" alt=""></div>
+        <div class="img-main" style="width:100%;"><img src="assets/figma-source/band/post2.png" alt=""></div>
       </div>
       <div class="review-reaction">
         <div class="reaction-time"><span>18시간 전</span><span>·</span><span>조회 30</span></div>
         <div class="reaction-btns">
-          <div class="reaction-btn"><img src="https://www.figma.com/api/mcp/asset/7acb0363-b086-4668-a814-59c6d7a9a53e" alt=""><span>4</span></div>
-          <div class="reaction-btn"><img src="https://www.figma.com/api/mcp/asset/e4b859e4-5998-4c02-944f-e5e48930b065" alt=""><span>3</span></div>
+          <div class="reaction-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt=""><span>4</span></div>
+          <div class="reaction-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt=""><span>3</span></div>
         </div>
       </div>
     </div>
@@ -2035,7 +2030,7 @@ body {
         <span class="review-moim">여성 J-POP 밴드 모집</span>
         <div class="review-info-row">
           <div class="info-chunk">
-            <img src="https://www.figma.com/api/mcp/asset/bb8079bb-9478-42f2-80d0-96b1dc2d1c97" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2C8.69 2 6 4.69 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.31-2.69-6-6-6z' stroke='%23868b94' stroke-width='2'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%23868b94'/%3E%3C/svg%3E" alt="">
             <span>다산동</span>
           </div>
           <span class="info-dot">•</span>
@@ -2045,7 +2040,7 @@ body {
         </div>
       </div>
       <div class="review-author">
-        <div class="avatar"><img src="https://www.figma.com/api/mcp/asset/a61837f3-76d2-43fd-81a8-63079375895a" alt=""></div>
+        <div class="avatar"><img src="assets/496a4bbdaa8426d2c5b4207711ef773f21db88b3.png" alt=""></div>
         <div class="author-info">
           <span class="author-name">white</span>
           <span class="author-type">자유 게시판</span>
@@ -2053,13 +2048,13 @@ body {
       </div>
       <p class="review-text">이번주도 재밌게 연습 완료<br>장소 제공해주신 <span style="color:#217cf9;">@룰루라라</span>님 감사합니당</p>
       <div class="review-imgs" style="height:176px;">
-        <div class="img-main" style="width:100%;"><img src="https://www.figma.com/api/mcp/asset/9415edf3-0ae9-474b-bd5a-6fada8960fbb" alt=""></div>
+        <div class="img-main" style="width:100%;"><img src="assets/figma-source/band/post3.png" alt=""></div>
       </div>
       <div class="review-reaction">
         <div class="reaction-time"><span>3시간 전</span><span>·</span><span>조회 30</span></div>
         <div class="reaction-btns">
-          <div class="reaction-btn"><img src="https://www.figma.com/api/mcp/asset/7acb0363-b086-4668-a814-59c6d7a9a53e" alt=""><span>2</span></div>
-          <div class="reaction-btn"><img src="https://www.figma.com/api/mcp/asset/e4b859e4-5998-4c02-944f-e5e48930b065" alt=""><span>3</span></div>
+          <div class="reaction-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt=""><span>2</span></div>
+          <div class="reaction-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z' stroke='%23868b94' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt=""><span>3</span></div>
         </div>
       </div>
     </div>
@@ -2069,16 +2064,16 @@ body {
 
   <!-- Floating btn -->
   <div class="floating-btn">
-    <img src="https://www.figma.com/api/mcp/asset/74eca925-0068-4c06-abdd-5973a753d2a2" alt="">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 5v14M5 12h14' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" alt="">
     <span>모임 만들기</span>
   </div>
 
   <div class="gnb">
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/99300872-41cc-44aa-b990-870b0e769392" alt=""><span class="gnb-label">홈</span></div>
-    <div class="gnb-item active"><img src="https://www.figma.com/api/mcp/asset/de8aae17-88a5-49bf-8eb7-0f0262e60150" alt=""><span class="gnb-label">커뮤니티</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/2d6dc8b3-c354-47df-8744-d8c4c8105df8" alt=""><span class="gnb-label">동네지도</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/869c0b32-9829-41f1-80c8-21f469328aad" alt=""><span class="gnb-label">채팅</span></div>
-    <div class="gnb-item"><img src="https://www.figma.com/api/mcp/asset/e3276d06-f90d-4d2b-a165-df2966169754" alt=""><span class="gnb-label">나의 당근</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_home.svg" alt=""><span class="gnb-label">홈</span></div>
+    <div class="gnb-item active"><img src="assets/icons/gnb_comm.svg" alt=""><span class="gnb-label">커뮤니티</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_map.svg" alt=""><span class="gnb-label">동네지도</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_chat.svg" alt=""><span class="gnb-label">채팅</span></div>
+    <div class="gnb-item"><img src="assets/icons/gnb_my.svg" alt=""><span class="gnb-label">나의 당근</span></div>
     <div class="home-bar"></div>
   </div>
 </div>
@@ -2087,12 +2082,352 @@ body {
 </div><!-- /phone -->
 
 <script>
-function go(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  const scroll = document.getElementById(id).querySelector('.scroll-area');
-  if (scroll) scroll.scrollTop = 0;
-}
+(function () {
+  const localPhotos = [
+    "assets/figma-source/feed-all/post1-main.png",
+    "assets/figma-source/feed-all/post1-sub.png",
+    "assets/figma-source/feed-all/post2-main.png",
+    "assets/figma-source/feed-all/post2-sub.png",
+    "assets/figma-source/feed-all/post3-main.png",
+    "assets/figma-source/feed-all/post3-sub.png",
+    "assets/figma-source/feed-recommended/post1-main.png",
+    "assets/figma-source/feed-recommended/post1-sub.png",
+    "assets/figma-source/feed-recommended/post2-main.png",
+    "assets/figma-source/feed-recommended/post2-sub.png",
+    "assets/figma-source/feed-popular/post1-main.png",
+    "assets/figma-source/feed-popular/post1-sub.png",
+    "assets/figma-source/feed-popular/post2-main.png",
+    "assets/figma-source/feed-popular/post2-sub.png",
+    "assets/figma-source/feed-popular/video-1.png",
+    "assets/figma-source/feed-popular/video-2.png",
+    "assets/figma-source/feed-popular/video-3.png",
+    "assets/figma-source/feed-popular/video-4.png",
+    "assets/figma-source/feed-popular/story-base.png",
+    "assets/figma-source/feed-popular/story-1.png",
+    "assets/figma-source/feed-popular/story-2.png",
+    "assets/figma-source/feed-popular/story-3.png",
+    "assets/figma-source/neighborhood-popular/top3.png",
+    "assets/figma-source/neighborhood-popular/rank-1.png",
+    "assets/figma-source/neighborhood-popular/rank-2.png",
+    "assets/figma-source/neighborhood-popular/rank-3.png",
+    "assets/figma-source/neighborhood-popular/rank-4.png",
+    "assets/figma-source/neighborhood-popular/rank-5.png",
+    "assets/figma-source/neighborhood-recommended/card-1.png",
+    "assets/figma-source/neighborhood-recommended/card-2.png",
+    "assets/figma-source/neighborhood-recommended/card-3.png",
+    "assets/figma-source/neighborhood-recommended/card-4.png",
+    "assets/figma-source/neighborhood-recommended/card-5.png",
+    "assets/figma-source/neighborhood-recommended/card-6.png",
+    "assets/figma-source/neighborhood-recommended/card-7.png",
+    "assets/figma-crops/s10_thumb1.png",
+    "assets/figma-crops/s10_thumb5.png"
+  ];
+  const avatarFallback = "assets/496a4bbdaa8426d2c5b4207711ef773f21db88b3.png";
+  const iconFallback = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='9' stroke='%23868b94' stroke-width='2'/%3E%3Cpath d='M8 12h8M12 8v8' stroke='%23868b94' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E";
+  const statusFallback = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='15' viewBox='0 0 72 15' fill='none'%3E%3Cpath d='M2 8h10M7 3v10M18 11h8M20 7h6M22 3h4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='38' y='3' width='24' height='9' rx='2' stroke='black' stroke-width='1.4'/%3E%3Crect x='40' y='5' width='17' height='5' rx='1' fill='black'/%3E%3Cpath d='M64 6v3' stroke='black' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E";
+
+  function isExpiredFigmaAsset(src) {
+    return src && src.includes("figma.com/api/mcp/asset/");
+  }
+
+  function pickPhoto(index) {
+    return localPhotos[index % localPhotos.length];
+  }
+
+  function chooseFallback(img, index) {
+    if (img.closest(".status-icons-wrap")) return statusFallback;
+    if (img.closest(".avatar, .ytm-avatar")) return avatarFallback;
+    if (img.closest(".review-imgs, .video-thumb, .moim-thumb, .ytm-photo-main, .ytm-photo-side") || img.parentElement?.className === "img-main" || img.parentElement?.className === "img-sub") {
+      return pickPhoto(index);
+    }
+    if (img.getAttribute("style")?.includes("object-fit:cover")) return pickPhoto(index);
+    return iconFallback;
+  }
+
+  function restoreExpiredFigmaAssets() {
+    document.querySelectorAll("img").forEach(function (img, index) {
+      if (!isExpiredFigmaAsset(img.getAttribute("src"))) return;
+      img.src = chooseFallback(img, index);
+      img.dataset.restoredFigmaAsset = "true";
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", restoreExpiredFigmaAssets);
+  window.addEventListener("error", function (event) {
+    const target = event.target;
+    if (target && target.tagName === "IMG" && isExpiredFigmaAsset(target.getAttribute("src"))) {
+      target.src = chooseFallback(target, 0);
+      target.dataset.restoredFigmaAsset = "true";
+    }
+  }, true);
+})();
+
+(function () {
+  const config = window.PROTOTYPE_ANALYTICS_CONFIG || {};
+  const screenNames = {
+    s1: "community_feed_recommended",
+    s2: "community_feed_popular",
+    s3: "neighborhood_groups_popular",
+    s4: "neighborhood_groups_recommended",
+    s5: "story_detail",
+    s6: "post_detail",
+    s7: "popular_groups",
+    s8: "group_detail",
+    s9: "group_profile_input",
+    s10: "popular_groups_band_filter"
+  };
+  const enteredAtByScreen = {};
+  const scrollDepthByScreen = {};
+  const posthogQueue = [];
+
+  function generateAnonymousId() {
+    return "session_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 8);
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const userFromUrl = params.get("user");
+  const storedUserId = localStorage.getItem("anonymous_user_id");
+  const userId = userFromUrl || storedUserId || generateAnonymousId();
+  localStorage.setItem("anonymous_user_id", userId);
+
+  function getActiveScreen() {
+    return document.querySelector(".screen.active") || document.getElementById("s1");
+  }
+
+  function getPageName(screenId) {
+    return screenNames[screenId] || screenId || "unknown";
+  }
+
+  function getBaseProperties(extra) {
+    const activeScreen = getActiveScreen();
+    const screenId = activeScreen ? activeScreen.id : "unknown";
+    return Object.assign({
+      user_id: userId,
+      page_name: getPageName(screenId),
+      screen_id: screenId,
+      timestamp: new Date().toISOString(),
+      current_url: window.location.href,
+      viewport_size: window.innerWidth + "x" + window.innerHeight
+    }, extra || {});
+  }
+
+  function applyPrivacyMasking() {
+    document.querySelectorAll("input, textarea, select, [contenteditable='true']").forEach(function (field) {
+      field.setAttribute("data-clarity-mask", "true");
+      field.setAttribute("autocomplete", "off");
+    });
+  }
+
+  function loadClarity() {
+    if (!config.clarityProjectId) return;
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", config.clarityProjectId);
+  }
+
+  function loadPostHog() {
+    if (!config.posthogKey) return;
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = config.posthogHost.replace(/\/$/, "") + "/static/array.js";
+    script.onload = function () {
+      if (!window.posthog) return;
+      window.posthog.init(config.posthogKey, {
+        api_host: config.posthogHost,
+        person_profiles: "identified_only",
+        capture_pageview: false
+      });
+      window.posthog.identify(userId, { user_id: userId, prototype_user: true });
+      while (posthogQueue.length) {
+        const item = posthogQueue.shift();
+        window.posthog.capture(item.name, item.properties);
+      }
+    };
+    document.head.appendChild(script);
+  }
+
+  function sendToPostHog(name, properties) {
+    if (!config.posthogKey) return;
+    if (window.posthog && window.posthog.capture) {
+      window.posthog.capture(name, properties);
+      return;
+    }
+    posthogQueue.push({ name, properties });
+  }
+
+  function logToConsole(name, properties) {
+    if (!window.console) return;
+    console.groupCollapsed("[UX TRACKING] " + name);
+    console.log("user_id:", properties.user_id);
+    console.log("page_name:", properties.page_name);
+    if (properties.element_name) console.log("element_name:", properties.element_name);
+    console.log("timestamp:", properties.timestamp);
+    console.log("current_url:", properties.current_url);
+    console.log("viewport_size:", properties.viewport_size);
+    console.log("properties:", properties);
+    console.groupEnd();
+  }
+
+  function track(name, extra) {
+    const properties = getBaseProperties(extra);
+    if (window.clarity) {
+      window.clarity("set", "user_id", userId);
+      window.clarity("event", name);
+    }
+    sendToPostHog(name, properties);
+    logToConsole(name, properties);
+    window.prototypeAnalyticsLastEvent = { name: name, properties: properties };
+  }
+
+  window.trackEvent = track;
+
+  function identifyUser() {
+    if (window.clarity) {
+      window.clarity("identify", userId);
+      window.clarity("set", "user_id", userId);
+      window.clarity("set", "user_param", userFromUrl || "");
+    }
+  }
+
+  function getElementName(element) {
+    if (element.dataset && element.dataset.uxName) return element.dataset.uxName;
+    if (element.closest(".review-card")) return "post_card";
+    if (element.closest(".ytm-card")) return "popular_group_post_card";
+    if (element.closest(".video-card")) return "story_card";
+    if (element.closest(".floating-btn")) return "write_button";
+    if (element.closest(".cat-filter-item")) return "category_filter";
+    if (element.closest(".reaction-btn")) return "reaction_button";
+    if (element.closest(".gnb-item")) return "bottom_navigation_item";
+    if (element.closest(".filter-item")) return "community_filter";
+    if (element.closest(".tab-pill")) return "content_tab";
+    if (element.closest(".sort-chip")) return "sort_filter";
+    if (element.tagName === "BUTTON") return "button";
+    if (element.className && typeof element.className === "string") return element.className;
+    return element.tagName ? element.tagName.toLowerCase() : "unknown_element";
+  }
+
+  function getGoTarget(element) {
+    let current = element;
+    while (current && current !== document.body) {
+      const handler = current.getAttribute && current.getAttribute("onclick");
+      const match = handler && handler.match(/go\(['"]([^'"]+)['"]\)/);
+      if (match) return match[1];
+      current = current.parentElement;
+    }
+    return null;
+  }
+
+  function getClickEventName(element, targetScreenId) {
+    const activeScreen = getActiveScreen();
+    const elementName = getElementName(element);
+    const clickable = element.closest(".review-card, .ytm-card, .video-card, .floating-btn, .cat-filter-item, .filter-item, .tab-pill, .sort-chip, .reaction-btn, .gnb-item, button");
+
+    if (targetScreenId === "s7") return "community_enter_clicked";
+    if (targetScreenId === "s6" && (clickable && (clickable.classList.contains("review-card") || clickable.classList.contains("ytm-card")))) return "post_card_clicked";
+    if (targetScreenId === "s5") return "post_card_clicked";
+    if (targetScreenId === "s8") return "complete_action_clicked";
+    if (targetScreenId === "s9") return "neighborhood_auth_clicked";
+    if (targetScreenId && targetScreenId !== (activeScreen && activeScreen.id) && elementName.includes("‹")) return "back_button_clicked";
+    if (clickable && clickable.classList.contains("floating-btn")) return "write_button_clicked";
+    if (clickable && clickable.classList.contains("cat-filter-item")) return "category_filter_clicked";
+    if (clickable && (clickable.classList.contains("filter-item") || clickable.classList.contains("tab-pill") || clickable.classList.contains("sort-chip"))) return "category_filter_clicked";
+    if (clickable && clickable.classList.contains("reaction-btn")) return "comment_button_clicked";
+    if (elementName.includes("보러가기")) return "complete_action_clicked";
+    if (targetScreenId) return "prototype_navigation_clicked";
+    return "prototype_element_clicked";
+  }
+
+  function recordScreenEnter(screenId, fromScreenId) {
+    const now = Date.now();
+    enteredAtByScreen[screenId] = now;
+    scrollDepthByScreen[screenId] = 0;
+    track("page_entered", {
+      page_name: getPageName(screenId),
+      screen_id: screenId,
+      from_page_name: getPageName(fromScreenId),
+      from_screen_id: fromScreenId || ""
+    });
+  }
+
+  function recordScreenLeave(screenId, reason) {
+    if (!screenId || !enteredAtByScreen[screenId]) return;
+    track("page_exited", {
+      page_name: getPageName(screenId),
+      screen_id: screenId,
+      duration_ms: Date.now() - enteredAtByScreen[screenId],
+      max_scroll_depth: scrollDepthByScreen[screenId] || 0,
+      exit_reason: reason || "navigation"
+    });
+  }
+
+  window.go = function (id) {
+    const activeScreen = getActiveScreen();
+    const fromScreenId = activeScreen ? activeScreen.id : "";
+    recordScreenLeave(fromScreenId, "navigation");
+    document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+    const nextScreen = document.getElementById(id);
+    if (!nextScreen) return;
+    nextScreen.classList.add("active");
+    const scroll = nextScreen.querySelector(".scroll-area");
+    if (scroll) scroll.scrollTop = 0;
+    recordScreenEnter(id, fromScreenId);
+  };
+
+  document.addEventListener("click", function (event) {
+    if (event.target.closest("input, textarea, select, [contenteditable='true']")) return;
+    const clickable = event.target.closest(".review-card, .ytm-card, .video-card, .floating-btn, .cat-filter-item, .filter-item, .tab-pill, .sort-chip, .reaction-btn, .gnb-item, button, [onclick]");
+    if (!clickable) return;
+    const targetScreenId = getGoTarget(clickable);
+    const eventName = getClickEventName(clickable, targetScreenId);
+    track(eventName, {
+      element_name: getElementName(clickable),
+      target_page_name: getPageName(targetScreenId),
+      target_screen_id: targetScreenId || "",
+      click_x: event.clientX,
+      click_y: event.clientY
+    });
+  }, true);
+
+  document.querySelectorAll(".scroll-area").forEach(function (scrollArea) {
+    scrollArea.addEventListener("scroll", function () {
+      const screen = scrollArea.closest(".screen");
+      if (!screen) return;
+      const maxScroll = scrollArea.scrollHeight - scrollArea.clientHeight;
+      const depth = maxScroll > 0 ? Math.round((scrollArea.scrollTop / maxScroll) * 100) : 100;
+      const previous = scrollDepthByScreen[screen.id] || 0;
+      if (depth > previous) scrollDepthByScreen[screen.id] = depth;
+      [25, 50, 75, 90, 100].forEach(function (milestone) {
+        const key = "scroll_" + screen.id + "_" + milestone;
+        if (depth >= milestone && !scrollArea.dataset[key]) {
+          scrollArea.dataset[key] = "true";
+          track("scroll_depth_reached", {
+            page_name: getPageName(screen.id),
+            screen_id: screen.id,
+            scroll_depth: milestone
+          });
+        }
+      });
+    }, { passive: true });
+  });
+
+  window.addEventListener("beforeunload", function () {
+    const activeScreen = getActiveScreen();
+    recordScreenLeave(activeScreen && activeScreen.id, "beforeunload");
+  });
+
+  loadClarity();
+  loadPostHog();
+  applyPrivacyMasking();
+  identifyUser();
+  recordScreenEnter((getActiveScreen() || {}).id || "s1", "");
+})();
 </script>
 </body>
 </html>
